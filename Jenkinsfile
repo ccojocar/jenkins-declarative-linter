@@ -15,5 +15,11 @@ pipeline {
                 sh "printenv | sort"
             }
         }
+
+        stage('run declarative linter') {
+            steps {
+                sh "declarative-linter < Jenkinsfile"
+            }
+        }
     }
 }
